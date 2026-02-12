@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Настройка Shadowrocket — инструкция</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+/* ---------- IMAGES ---------- */
+.img-container {
+    text-align: center; 
+    margin: 14px 0;     
+}
+
+.step-img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 14px;
+    margin-top: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: 0.4s;
+}
+
+.step-img:hover {
+    transform: scale(1.04);
+}
+
+/* nav */
+.nav{
+ position:sticky;
+ top:0;
+ z-index: 1000;
+ background:rgba(0,0,0,.4);
+ backdrop-filter:blur(8px);
+ padding:14px 20px;
+}
+.nav a{
+ color:#38bdf8;
+ text-decoration:none;
+ margin-right:20px;
+ font-weight:600;
+}
+
+/* ---------- PROGRESS BAR ---------- */
+
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6px;
+    background: #38bdf8;
+    width: 0%;
+    z-index: 999;
+}
+
+/* ---------- HEADER / HERO ---------- */
+
+.header {
+    padding: 70px 20px 40px;
+}
+
+.hero {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text h1 {
+    font-size: 44px;
+    margin: 0 0 10px;
+}
+
+.hero-text p {
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+.hero img {
+    width: 180px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* ---------- CONTAINER ---------- */
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ---------- STEP CARD ---------- */
+
+.step {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 22px;
+    transform: translateY(40px);
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.step.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #38bdf8;
+    color: black;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* ---------- LINKS ---------- */
+
+.app-link {
+    color: #38bdf8;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.app-link:hover {
+    text-shadow: 0 0 8px rgba(56,189,248,0.8);
+}
+
+/* ---------- BUTTON ---------- */
+
+.button {
+    display: inline-flex;          /* вместо inline-block */
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 22px;
+    border-radius: 10px;
+
+    background: linear-gradient(45deg, #38bdf8, #22d3ee);
+    color: black;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;              
+
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.button {
+    font-family: inherit;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(56,189,248,0.6);
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.6;
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero img {
+        width: 140px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<div class="nav">
+ <a href="index.html">Главная страница</a>
+ <a href="yt-module.html">YouTube без рекламы</a>
+ <a href="happ.html">Happ Plus</a>
+ <a href="v2raytun.html">V2RayTun</a>
+</div>
+
+
+<!-- HERO -->
+
+<div class="header">
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Настройка Shadowrocket</h1>
+            <p>Shadowrocket — это популярный прокси-клиент для iOS, предназначенный для обхода интернет-цензуры и географических ограничений. Он работает по принципу перехвата всего интернет-трафика устройства и его перенаправления через прокси-серверы (Trojan, Vmess, VLESS, Socks, Shadowsocks, Hysteria2). Приложение позволяет гибко настраивать правила, обеспечивая шифрование и анонимность. </p>
+            <p>Пошаговая инструкция для стабильной работы</p>
+            <br>
+            <button class="button" onclick="goBack()">← Назад</button>
+            <a class="button" href="https://apps.apple.com/app/shadowrocket/id932747118" target="_blank">
+                Открыть в App Store
+            </a>
+        </div>
+
+        <!-- положи рядом файл shadowrocket.png -->
+        <img src="images/shadowrocket.png" alt="Shadowrocket">
+    </div>
+</div>
+
+<div class="container">
+
+<!-- STEP 1 -->
+
+<div class="step">
+    <div class="step-number">1</div>
+    <h2>Установка приложения</h2>
+    <p>
+        Установи (249,00 ₽)
+        <a class="app-link" href="https://apps.apple.com/app/shadowrocket/id932747118" target="_blank">
+            Shadowrocket из App Store
+        </a>.
+        Такое гибкое приложение полностью окупает свою стоимость.<br>
+        Если оплатить нет возможности, напиши мне в телеграм, можно оплатить через меня.
+    </p>
+</div>
+
+<!-- STEP 2 -->
+
+<div class="step">
+    <div class="step-number">2</div>
+    <h2>Добавление конфигурации</h2>
+    <p>
+        Получи и скопируй ссылку конфигурации от бота.
+        В приложении нажми +.
+         <div class="img-container">
+        <img src="images/step_1_1.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
+        Либо отсканируй QR-код, нажав в приложении на кнопку в верхнем левом углу.<br>
+         <div class="img-container">
+        <img src="images/step_1_2.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
+        ⚠️ При сканировании QR следующий пункт необязателен.
+    </p>
+</div>
+
+<!-- STEP 3 -->
+
+<div class="step">
+    <div class="step-number">3</div>
+    <h2>Импорт профиля</h2>
+    <p>
+        Вставь ссылку и подтверди импорт.
+        Серверы добавятся автоматически. 
+        Нажми Save.
+    </p>
+
+    <button class="button" onclick="copyExample()">Скопировать пример ссылки</button>
+</div>
+
+<!-- STEP 4 -->
+
+<div class="step">
+    <div class="step-number">4</div>
+    <h2>Настройка роутинга</h2>
+    <p>
+        1️⃣ Убедись, что на вкладке Home в приложении в параметре Global Routing выбрано "Config";<br>
+         <div class="img-container">
+        <img src="images/step_4_1.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
+        2️⃣ Далее перейди во вкладку Config и нажми +;<br>
+        3️⃣ Скопируй ссылку по кнопке "Скопировать конфигурацию" и нажми Download;<br>
+        4️⃣ Убедись, что в Local Files появилась и выбрана скачанная конфигурация.
+        <div class="img-container">
+        <img src="images/step_4.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
+    </p>
+    <button class="button" onclick="copyRoutingConfig()">Скопировать конфигурацию</button>
+</div>
+
+<!-- STEP 5 -->
+
+<div class="step">
+    <div class="step-number">5</div>
+    <h2>Подключение</h2>
+    <p>
+        Выбери конфигурацию из списка на вкладке Home и включи переключатель VPN.
+        Подтверди разрешение системы.<br>
+        <div class="img-container">
+        <img src="images/step_5.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
+    </p>
+</div>
+
+<!-- STEP 6 -->
+
+<div class="step">
+    <div class="step-number">6</div>
+    <h2>Автообновление конфигураций</h2>
+    <p>
+        В приложении перейдите:<br>
+        Settings → Config → Auto Background Update → Вкл. → Interval → 1<br>
+        <div class="img-container">
+        <img src="images/step_6_1.jpg" alt="Автообновление конфигураций" class="step-img">
+        </div>
+        Settings → Subscription → Update On Open → Вкл. → Auto Background Update → Вкл.<br>
+        <div class="img-container">
+        <img src="images/step_6_2.jpg" alt="Автообновление конфигураций" class="step-img">
+        </div>
+    </p>
+</div>
+
+<div class="step">
+    <div class="step-number">7</div>
+    <h2>YouTube без рекламы</h2>
+    <p>Отдельная инструкция по модулю:</p>
+    <a class="button" href="yt-module.html">
+Открыть инструкцию модуля
+</a>
+</div>
+
+</div>
+
+<div class="footer">
+    Инструкция по настройке Shadowrocket
+</div>
+
+<script>
+
+/* ---------- SCROLL ANIMATION ---------- */
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add("visible");
+  });
+});
+
+document.querySelectorAll(".step").forEach(el=>observer.observe(el));
+
+/* ---------- PROGRESS ---------- */
+
+window.addEventListener("scroll", ()=>{
+  const s = document.documentElement.scrollTop;
+  const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  progress.style.width = (s/h)*100 + "%";
+});
+
+/* ---------- COPY ---------- */
+
+/* ---------- COPY ---------- */
+
+function copyExample(){
+  navigator.clipboard.writeText("https://example-config-link");
+  alert("Ссылка скопирована");
+}
+
+function copyRoutingConfig(){
+  navigator.clipboard.writeText("https://raw.githubusercontent.com/misha-tgshv/shadowrocket-configuration-file/refs/heads/main/conf/sr_ru_basic.conf");
+  alert("Ссылка скопирована");
+}
+
+function goBack() {
+    window.history.back();
+}
+
+</script>
+
+</body>
+</html>

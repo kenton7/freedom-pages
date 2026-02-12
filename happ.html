@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Настройка v2RayTun — инструкция</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+/* ---------- IMAGES ---------- */
+.img-container {
+    text-align: center; 
+    margin: 14px 0;     
+}
+
+.step-img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 14px;
+    margin-top: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: 0.4s;
+}
+
+.step-img:hover {
+    transform: scale(1.04);
+}
+
+/* nav */
+.nav{
+ position:sticky;
+ top:0;
+ z-index: 1000;
+ background:rgba(0,0,0,.4);
+ backdrop-filter:blur(8px);
+ padding:14px 20px;
+}
+.nav a{
+ color:#38bdf8;
+ text-decoration:none;
+ margin-right:20px;
+ font-weight:600;
+}
+
+/* ---------- FAQ ---------- */
+
+.faq-item {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    opacity: 0.8;
+    margin-top: 8px;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.6;
+}
+
+/* ---------- PROGRESS BAR ---------- */
+
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6px;
+    background: #38bdf8;
+    width: 0%;
+    z-index: 999;
+}
+
+/* ---------- HEADER / HERO ---------- */
+
+.header {
+    padding: 70px 20px 40px;
+}
+
+.hero {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text h1 {
+    font-size: 44px;
+    margin: 0 0 10px;
+}
+
+.hero-text p {
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+.hero img {
+    width: 180px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* ---------- CONTAINER ---------- */
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ---------- STEP CARD ---------- */
+
+.step {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 22px;
+    transform: translateY(40px);
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.step.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #38bdf8;
+    color: black;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* ---------- LINKS ---------- */
+
+.app-link {
+    color: #38bdf8;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.app-link:hover {
+    text-shadow: 0 0 8px rgba(56,189,248,0.8);
+}
+
+/* ---------- BUTTON ---------- */
+
+.button {
+    display: inline-flex;          /* вместо inline-block */
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 22px;
+    border-radius: 10px;
+
+    background: linear-gradient(45deg, #38bdf8, #22d3ee);
+    color: black;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.button {
+    font-family: inherit;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(56,189,248,0.6);
+}
+
+/* ---------- FAQ ---------- */
+
+.faq-item {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    opacity: 0.8;
+    margin-top: 8px;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.6;
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero img {
+        width: 140px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+
+<div class="nav">
+    <a href="index.html">Главная страница</a>
+ <a href="shadowrocket.html">Shadowrocket</a>
+ <a href="v2raytun.html">V2RayTun</a>
+</div>
+
+
+<!-- HERO -->
+
+<div class="header">
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Настройка Happ Plus</h1>
+            <p>Happ Plus (или Happ - Proxy Utility) — это современный, быстрый клиент (приложение) для настройки прокси- и VPN-соединений, работающий на базе ядра Xray. Он не предоставляет собственные VPN-услуги, а используется для подключения к персональным серверам, поддерживая передовые протоколы, такие как VLESS (с Reality), VMess, Trojan, Shadowsocks и Socks, обеспечивая высокую конфиденциальность. </p>
+            <p>Пошаговая инструкция для стабильной работы</p>
+            <br>
+            <button class="button" onclick="goBack()">← Назад</button>
+            <a class="button" href="https://apps.apple.com/ru/app/happ-proxy-utility-plus/id6746188973" target="_blank">
+                Скачать в App Store
+            </a>
+
+            <a class="button" href="https://play.google.com/store/apps/details?id=com.happproxy&hl=ru" target="_blank">
+                Скачать в Google Play
+            </a>
+        </div>
+        <img src="images/happ.png" alt="V2RayTun">
+    </div>
+</div>
+
+<div class="container">
+
+<!-- STEP 1 -->
+
+<div class="step">
+    <div class="step-number">1</div>
+    <h2>Установка приложения</h2>
+    <p>
+        Установи Happ Plus
+        <a class="app-link" href="https://apps.apple.com/ru/app/v2raytun/id6476628951" target="_blank">
+             из App Store
+        </a> или 
+        <a class="app-link" href="https://play.google.com/store/apps/details?id=com.v2raytun.android&hl=ru" target="_blank">
+            из Google Play
+        </a> 
+    </p>
+</div>
+
+<!-- STEP 2 -->
+
+<div class="step">
+    <div class="step-number">2</div>
+    <h2>Добавление конфигурации</h2>
+    <p>
+        Получи и скопируй ссылку конфигурации от бота.
+        В приложении нажми + и нажми "QR-код" или "Вставить из буфера обмена", если скопировал(-a) ссылку из бота.<br>
+         <div class="img-container">
+        <img src="images/happ-1.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
+        Либо те же кнопки внизу приложения:
+        <div class="img-container">
+        <img src="images/happ-2.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
+        Добавятся несколько конфигураций<br>
+        <div class="img-container">
+        <img src="images/happ-3.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
+    </p>
+</div>
+
+<!-- STEP 3 -->
+
+<div class="step">
+    <div class="step-number">3</div>
+    <h2>Настройка роутинга</h2>
+    <p>
+        1️⃣ Зайди в Настройки → Маршрутизация → ・・・ → Новый Профиль;<br>
+         <div class="img-container">
+        <img src="images/happ-4.jpg" alt="Настройка роутинга" class="step-img">
+        </div>
+        2️⃣ Введи любое название. Убедись, что после добавления профиля функция "Использовать роутинг включилась";<br>
+        <div class="img-container">
+        <img src="images/happ-5.jpg" alt="Настройка роутинга" class="step-img">
+        </div>
+        3️⃣ Нажми на свой созданный профиль;<br>
+            - Нажми на GeoStite, замени указанный адрес на скопированную ссылку GeoSite и нажми "Готово";<br>
+            <button class="button" onclick="copyGeoSite()">Скопировать GeoSite</button><br>
+            - То же самое нужно сделать с секцией GeoIP.<br>
+            <button class="button" onclick="copyGeoIP()">Скопировать GeoSite</button><br>
+        <div class="img-container">
+        <img src="images/happ-6.jpg" alt="Настройка роутинга" class="step-img">
+        </div>
+        
+        4️⃣ Выключить функцию "Урезать геофайлы";
+        <div class="img-container">
+        <img src="images/happ-8.jpg" alt="Настройка роутинга" class="step-img">
+        </div>
+
+        5️⃣ В Remote DNS выбрать "Тип удаленного DNS" <b>DoH</b> и убедиться, что прописались DoH URL и DoH IP, как на скриншоте;<br>
+        <div class="img-container">
+        <img src="images/happ-7.jpg" alt="Настройка роутинга" class="step-img">
+        </div>
+        6️⃣ В Domestic DNS выбрать "Тип домашнего DNS" <b>DoH</b> и убелиться, что прописались DoH URL и DoH IP, как на скриншоте выше;<br>
+        7️⃣ Стретегию доменов выбрать <b>IPIfNonMatch</b>.
+    </p>
+</div>
+
+<!-- STEP 4 -->
+
+<div class="step">
+    <div class="step-number">4</div>
+    <h2>Подключение</h2>
+    <p>
+        Выбери конфигурацию из списка и нажми на кнопку "Подключить".<br>
+        Подтверди разрешение системы.<br>
+        <div class="img-container">
+        <img src="images/happ-8.jpg" alt="Подключение" class="step-img">
+        </div>
+    </p>
+</div>
+
+<!-- STEP 5 -->
+
+<div class="step">
+    <div class="step-number">5</div>
+    <h2>Обновление конфигураций</h2>
+    <p>
+        Зайди в Настройки → Подписки → Авто обновления → Вкл. и Обновить при открытии → Вкл.<br>
+        <div class="img-container">
+        <img src="images/happ-10.jpg" alt="Обновление конфигураций" class="step-img">
+        </div>
+    </p>
+</div>
+
+</div>
+
+<div class="footer">
+    Инструкция по настройке V2RayTun
+</div>
+
+<script>
+
+/* ---------- SCROLL ANIMATION ---------- */
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add("visible");
+  });
+});
+
+document.querySelectorAll(".step").forEach(el=>observer.observe(el));
+
+/* ---------- PROGRESS ---------- */
+
+window.addEventListener("scroll", ()=>{
+  const s = document.documentElement.scrollTop;
+  const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  progress.style.width = (s/h)*100 + "%";
+});
+
+/* ---------- FAQ ---------- */
+
+function toggleFaq(el){
+  const ans = el.querySelector(".faq-answer");
+  ans.style.display = ans.style.display === "block" ? "none" : "block";
+}
+
+/* ---------- COPY ---------- */
+
+
+function copyGeoSite(){
+  navigator.clipboard.writeText("https://github.com/jameszeroX/zkeen-domains/releases/latest/download/zkeen.dat");
+  alert("Ссылка скопирована");
+}
+
+function copyGeoIP(){
+  navigator.clipboard.writeText("https://github.com/jameszeroX/zkeen-ip/releases/latest/download/zkeenip.dat");
+  alert("Ссылка скопирована");
+}
+
+function copyRoutingConfig(){
+  navigator.clipboard.writeText("https://raw.githubusercontent.com/misha-tgshv/shadowrocket-configuration-file/refs/heads/main/conf/sr_ru_basic.conf");
+  alert("Ссылка скопирована");
+}
+
+function goBack() {
+    window.history.back();
+}
+
+</script>
+
+</body>
+</html>

@@ -38,6 +38,7 @@ body{
 .nav{
  position:sticky;
  top:0;
+ z-index: 1000;
  background:rgba(0,0,0,.4);
  backdrop-filter:blur(8px);
  padding:14px 20px;
@@ -77,16 +78,29 @@ body{
  font-weight:700;margin-bottom:10px;
 }
 
-.button{
- display:inline-block;
- padding:14px 22px;
- border-radius:10px;
- background:linear-gradient(45deg,#38bdf8,#22d3ee);
- color:black;
- font-weight:600;
- text-decoration:none;
- border:none;
- cursor:pointer;
+.button {
+    display: inline-flex;          /* вместо inline-block */
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 22px;
+    border-radius: 10px;
+
+    background: linear-gradient(45deg, #38bdf8, #22d3ee);
+    color: black;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.button {
+    font-family: inherit;
 }
 
 .code-box{
@@ -104,15 +118,17 @@ body{
 <div class="progress" id="progress"></div>
 
 <div class="nav">
- <a href="index.html">Shadowrocket</a>
- <a href="yt-module.html">YT модуль</a>
+    <a href="index.html">Главная страница</a>
+ <a href="shadowrocket.html">Shadowrocket</a>
+ <a href="v2raytun.html">V2RayTun</a>
+ <a href="happ.html">Happ Plus</a>
 </div>
 
 <div class="header">
 <div class="hero">
 <h1>Настройка модуля YT-Premium-V1-RU</h1>
 <p>Подключение модуля YouTube в Shadowrocket для просмотра YouTube без рекламы</p>
-<a href="index.html" class="button">← Назад</a>
+<button class="button" onclick="goBack()">← Назад</button>
 </div>
 </div>
 
@@ -261,6 +277,11 @@ function copyModule(){
  navigator.clipboard.writeText(text);
  alert("Ссылка скопирована");
 }
+
+function goBack() {
+    window.history.back();
+}
+
 </script>
 
 </body>
