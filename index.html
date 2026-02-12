@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Настройка Shadowrocket — инструкция</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+/* ---------- PROGRESS BAR ---------- */
+
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6px;
+    background: #38bdf8;
+    width: 0%;
+    z-index: 999;
+}
+
+/* ---------- HEADER / HERO ---------- */
+
+.header {
+    padding: 70px 20px 40px;
+}
+
+.hero {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text h1 {
+    font-size: 44px;
+    margin: 0 0 10px;
+}
+
+.hero-text p {
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+.hero img {
+    width: 180px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* ---------- CONTAINER ---------- */
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ---------- STEP CARD ---------- */
+
+.step {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 22px;
+    transform: translateY(40px);
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.step.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #38bdf8;
+    color: black;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* ---------- LINKS ---------- */
+
+.app-link {
+    color: #38bdf8;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.app-link:hover {
+    text-shadow: 0 0 8px rgba(56,189,248,0.8);
+}
+
+/* ---------- BUTTON ---------- */
+
+.button {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #38bdf8, #22d3ee);
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(56,189,248,0.6);
+}
+
+/* ---------- FAQ ---------- */
+
+.faq-item {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    opacity: 0.8;
+    margin-top: 8px;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.6;
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero img {
+        width: 140px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- HERO -->
+
+<div class="header">
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Настройка Shadowrocket</h1>
+            <p>Пошаговая инструкция для стабильной работы</p>
+            <br>
+            <a class="button" href="https://apps.apple.com/app/shadowrocket/id932747118" target="_blank">
+                Открыть в App Store
+            </a>
+        </div>
+
+        <!-- положи рядом файл shadowrocket.png -->
+        <img src="shadowrocket.png" alt="Shadowrocket">
+    </div>
+</div>
+
+<div class="container">
+
+<!-- STEP 1 -->
+
+<div class="step">
+    <div class="step-number">1</div>
+    <h2>Установка приложения</h2>
+    <p>
+        Установите 
+        <a class="app-link" href="https://apps.apple.com/app/shadowrocket/id932747118" target="_blank">
+            Shadowrocket из App Store
+        </a>.
+        Если недоступно — используй зарубежный Apple ID.
+    </p>
+</div>
+
+<!-- STEP 2 -->
+
+<div class="step">
+    <div class="step-number">2</div>
+    <h2>Добавление конфигурации</h2>
+    <p>
+        Получи и скопируй ссылку конфигурации от бота.
+        В приложении нажми +.
+        Либо отсканируй QR-код, нажав в приложении на кнопку в верхнем левом углу.<br>
+        ⚠️ При сканировании QR следующий пункт необязателен.
+    </p>
+</div>
+
+<!-- STEP 3 -->
+
+<div class="step">
+    <div class="step-number">3</div>
+    <h2>Импорт профиля</h2>
+    <p>
+        Вставь ссылку и подтверди импорт.
+        Серверы добавятся автоматически. 
+        Нажми Save.
+    </p>
+
+    <button class="button" onclick="copyExample()">Скопировать пример ссылки</button>
+</div>
+
+<!-- STEP 4 -->
+
+<div class="step">
+    <div class="step-number">4</div>
+    <h2>Настройка роутинга</h2>
+    <p>
+        1️⃣ Убедись, что на вкладке Home в приложении в параметре Global Routing выбрано "Config";<br>
+        2️⃣ Далее перейди во вкладку Config и нажми +;<br>
+        3️⃣ Скопируй ссылку по кнопке "Скопировать конфигурацию" и нажми Download;<br>
+        4️⃣ Убедись, что в Local Files появилась и выбрана скачанная конфигурация.
+    </p>
+    <button class="button" onclick="copyExample()">Скопировать конфигурацию</button>
+</div>
+
+<!-- STEP 5 -->
+
+<div class="step">
+    <div class="step-number">5</div>
+    <h2>Подключение</h2>
+    <p>
+        Выбери конфигурацию из списка на вкладке Home и включи переключатель VPN.
+        Подтверди разрешение системы.
+    </p>
+</div>
+
+<!-- STEP 6 -->
+
+<div class="step">
+    <div class="step-number">6</div>
+    <h2>Автообновление конфигураций</h2>
+    <p>
+        В приложении перейдите:<br>
+        Settings → Config → Auto Background Update → Вкл. → Interval → 1<br>
+        Settings → Subscription → Update On Open → Вкл. → Auto Background Update → Вкл.
+    </p>
+</div>
+
+<div class="step">
+    <div class="step-number">7</div>
+    <h2>YouTube без рекламы</h2>
+    <p>Отдельная инструкция по модулю:</p>
+    <a class="button" href="yt-module.html">
+Открыть инструкцию модуля
+</a>
+</div>
+
+<!-- FAQ -->
+
+<h2>FAQ</h2>
+
+<div class="faq-item" onclick="toggleFaq(this)">
+    Не подключается — что делать?
+    <div class="faq-answer">
+        Проверь ссылку конфигурации и интернет-соединение.<br>
+        Либо напишите мне в телегу.
+    </div>
+</div>
+
+<div class="faq-item" onclick="toggleFaq(this)">
+    Какую конфигурацию выбрать для подключения?
+    <div class="faq-answer">
+        В списке несколько конфигураций на случай блокировок.<br>
+        Используй тот, который работает в данный момент.<br>
+        Если какой-то перестал работать, то используй любой другой, пока старый конфиг не будет переработан.
+    </div>
+</div>
+
+</div>
+
+<div class="footer">
+    Инструкция по настройке Shadowrocket
+</div>
+
+<script>
+
+/* ---------- SCROLL ANIMATION ---------- */
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add("visible");
+  });
+});
+
+document.querySelectorAll(".step").forEach(el=>observer.observe(el));
+
+/* ---------- PROGRESS ---------- */
+
+window.addEventListener("scroll", ()=>{
+  const s = document.documentElement.scrollTop;
+  const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  progress.style.width = (s/h)*100 + "%";
+});
+
+/* ---------- FAQ ---------- */
+
+function toggleFaq(el){
+  const ans = el.querySelector(".faq-answer");
+  ans.style.display = ans.style.display === "block" ? "none" : "block";
+}
+
+/* ---------- COPY ---------- */
+
+function copyExample(){
+  navigator.clipboard.writeText("https://example-config-link");
+  alert("Ссылка скопирована");
+}
+
+function copyRoutingConfig(){
+  navigator.clipboard.writeText("https://raw.githubusercontent.com/misha-tgshv/shadowrocket-configuration-file/refs/heads/main/conf/sr_ru_basic.conf");
+  alert("Ссылка скопирована");
+}
+
+</script>
+
+</body>
+</html>
