@@ -16,6 +16,10 @@ body {
     color: white;
 }
 
+.center {
+    text-align: center;
+}
+
 /* ---------- IMAGES ---------- */
 .img-container {
     text-align: center; 
@@ -328,40 +332,14 @@ button.button {
     <div class="step-number">3</div>
     <h2>Настройка роутинга</h2>
     <p>
-        Нажми на кнопку ниже<br> 
-        <a class="button"
-        href="happ://routing/add/eyJHbG9iYWxQcm94eSI6dHJ1ZSwiR2VvaXBVcmwiOiJodHRwczpcL1wvZ2l0aHViLmNvbVwvamFtZXN6ZXJvWFwvemtlZW4taXBcL3JlbGVhc2VzXC9sYXRlc3RcL2Rvd25sb2FkXC96a2VlbmlwLmRhdCIsIkRvbWFpblN0cmF0ZWd5IjoiSVBJZk5vbk1hdGNoIiwiRGlyZWN0U2l0ZXMiOltdLCJQcm94eUlwIjpbXSwiRG9tZXN0aWNETlNJcCI6IjguOC44LjgiLCJCbG9ja1NpdGVzIjpbXSwiTGFzdFVwZGF0ZWQiOjE3NzA5MTMzNDUsIlVzZUNodW5rRmlsZXMiOmZhbHNlLCJSZW1vdGVETlNUeXBlIjoiRG9IIiwiR2Vvc2l0ZVVybCI6Imh0dHBzOlwvXC9naXRodWIuY29tXC9qYW1lc3plcm9YXC96a2Vlbi1kb21haW5zXC9yZWxlYXNlc1wvbGF0ZXN0XC9kb3dubG9hZFwvemtlZW4uZGF0IiwiRGlyZWN0SXAiOlsiMTAuMC4wLjBcLzgiLCIxMDAuNjQuMC4wXC8xMCIsIjE3Mi4xNi4wLjBcLzEyIiwiMTkyLjE2OC4wLjBcLzE2IiwiMTY5LjI1NC4wLjBcLzE2IiwiMjI0LjAuMC4wXC80IiwiMjU1LjI1NS4yNTUuMjU1Il0sIkZha2VEbnMiOmZhbHNlLCJSb3V0ZU9yZGVyIjoiYmxvY2stZGlyZWN0LXByb3h5IiwiUmVtb3RlRE5TRG9tYWluIjoiaHR0cHM6XC9cL2Nsb3VkZmxhcmUtZG5zLmNvbVwvZG5zLXF1ZXJ5IiwiQmxvY2tJcCI6W10sIkRuc0hvc3RzIjp7fSwiTmFtZSI6IlJvdXRpbmciLCJEb21lc3RpY0ROU1R5cGUiOiJEb0giLCJSZW1vdGVETlNJcCI6IjEuMS4xLjEiLCJEb21lc3RpY0ROU0RvbWFpbiI6Imh0dHBzOlwvXC9kbnMuZ29vZ2xlXC9kbnMtcXVlcnkiLCJQcm94eVNpdGVzIjpbXX0=">
-         Добавить роутинг в Happ
-        </a>
-        <!-- 1️⃣ Зайди в Настройки → Маршрутизация → ・・・ → Новый Профиль;<br>
-         <div class="img-container">
-        <img src="images/happ-4.jpg" alt="Настройка роутинга" class="step-img">
-        </div>
-        2️⃣ Введи любое название. Убедись, что после добавления профиля функция "Использовать роутинг включилась";<br>
-        <div class="img-container">
-        <img src="images/happ-5.jpg" alt="Настройка роутинга" class="step-img">
-        </div>
-        3️⃣ Нажми на свой созданный профиль;<br>
-            - Нажми на GeoStite, замени указанный адрес на скопированную ссылку GeoSite и нажми "Готово";<br>
-            <button class="button" onclick="copyGeoSite()">Скопировать GeoSite</button><br>
-            - То же самое нужно сделать с секцией GeoIP.<br>
-            <button class="button" onclick="copyGeoIP()">Скопировать GeoSite</button><br>
-        <div class="img-container">
-        <img src="images/happ-6.jpg" alt="Настройка роутинга" class="step-img">
-        </div>
-        
-        4️⃣ Выключить функцию "Урезать геофайлы";
-        <div class="img-container">
-        <img src="images/happ-8.jpg" alt="Настройка роутинга" class="step-img">
-        </div>
-
-        5️⃣ В Remote DNS выбрать "Тип удаленного DNS" <b>DoH</b> и убедиться, что прописались DoH URL и DoH IP, как на скриншоте;<br>
-        <div class="img-container">
-        <img src="images/happ-7.jpg" alt="Настройка роутинга" class="step-img">
-        </div>
-        6️⃣ В Domestic DNS выбрать "Тип домашнего DNS" <b>DoH</b> и убелиться, что прописались DoH URL и DoH IP, как на скриншоте выше;<br>
-        7️⃣ Стретегию доменов выбрать <b>IPIfNonMatch</b>. -->
+        Нажми на кнопку ниже и после установки конфигурации нажми на кнопку "Готово".<br> 
     </p>
+    <div class="center">
+    <a class="button"
+       href="happ://routing/add/eyJHbG9iYWxQcm94eSI6dHJ1ZSwiR2VvaXBVcmwiOiJodHRwczpcL1wvZ2l0aHViLmNvbVwvamFtZXN6ZXJvWFwvemtlZW4taXBcL3JlbGVhc2VzXC9sYXRlc3RcL2Rvd25sb2FkXC96a2VlbmlwLmRhdCIsIkRvbWFpblN0cmF0ZWd5IjoiSVBJZk5vbk1hdGNoIiwiRGlyZWN0U2l0ZXMiOltdLCJQcm94eUlwIjpbXSwiRG9tZXN0aWNETlNJcCI6IjguOC44LjgiLCJCbG9ja1NpdGVzIjpbXSwiTGFzdFVwZGF0ZWQiOjE3NzA5MTMzNDUsIlVzZUNodW5rRmlsZXMiOmZhbHNlLCJSZW1vdGVETlNUeXBlIjoiRG9IIiwiR2Vvc2l0ZVVybCI6Imh0dHBzOlwvXC9naXRodWIuY29tXC9qYW1lc3plcm9YXC96a2Vlbi1kb21haW5zXC9yZWxlYXNlc1wvbGF0ZXN0XC9kb3dubG9hZFwvemtlZW4uZGF0IiwiRGlyZWN0SXAiOlsiMTAuMC4wLjBcLzgiLCIxMDAuNjQuMC4wXC8xMCIsIjE3Mi4xNi4wLjBcLzEyIiwiMTkyLjE2OC4wLjBcLzE2IiwiMTY5LjI1NC4wLjBcLzE2IiwiMjI0LjAuMC4wXC80IiwiMjU1LjI1NS4yNTUuMjU1Il0sIkZha2VEbnMiOmZhbHNlLCJSb3V0ZU9yZGVyIjoiYmxvY2stZGlyZWN0LXByb3h5IiwiUmVtb3RlRE5TRG9tYWluIjoiaHR0cHM6XC9cL2Nsb3VkZmxhcmUtZG5zLmNvbVwvZG5zLXF1ZXJ5IiwiQmxvY2tJcCI6W10sIkRuc0hvc3RzIjp7fSwiTmFtZSI6IlJvdXRpbmciLCJEb21lc3RpY0ROU1R5cGUiOiJEb0giLCJSZW1vdGVETlNJcCI6IjEuMS4xLjEiLCJEb21lc3RpY0ROU0RvbWFpbiI6Imh0dHBzOlwvXC9kbnMuZ29vZ2xlXC9kbnMtcXVlcnkiLCJQcm94eVNpdGVzIjpbXX0=">
+       Добавить роутинг в Happ
+    </a>
+</div>
 </div>
 
 <!-- STEP 4 -->
@@ -373,7 +351,7 @@ button.button {
         Выбери конфигурацию из списка и нажми на кнопку "Подключить".<br>
         Подтверди разрешение системы.<br>
         <div class="img-container">
-        <img src="images/happ-8.jpg" alt="Подключение" class="step-img">
+        <img src="images/happ-9.jpg" alt="Подключение" class="step-img">
         </div>
     </p>
 </div>
