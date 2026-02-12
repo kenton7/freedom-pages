@@ -16,6 +16,25 @@ body {
     color: white;
 }
 
+/* ---------- IMAGES ---------- */
+.img-container {
+    text-align: center; 
+    margin: 14px 0;     
+}
+
+.step-img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 14px;
+    margin-top: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: 0.4s;
+}
+
+.step-img:hover {
+    transform: scale(1.04);
+}
+
 /* ---------- PROGRESS BAR ---------- */
 
 .progress {
@@ -187,6 +206,7 @@ body {
     <div class="hero">
         <div class="hero-text">
             <h1>Настройка Shadowrocket</h1>
+            <p>Shadowrocket — это популярный прокси-клиент для iOS, предназначенный для обхода интернет-цензуры и географических ограничений. Он работает по принципу перехвата всего интернет-трафика устройства и его перенаправления через прокси-серверы (Trojan, Vmess, VLESS, Socks, Shadowsocks, Hysteria2). Приложение позволяет гибко настраивать правила, обеспечивая шифрование и анонимность. </p>
             <p>Пошаговая инструкция для стабильной работы</p>
             <br>
             <a class="button" href="https://apps.apple.com/app/shadowrocket/id932747118" target="_blank">
@@ -195,7 +215,7 @@ body {
         </div>
 
         <!-- положи рядом файл shadowrocket.png -->
-        <img src="shadowrocket.png" alt="Shadowrocket">
+        <img src="images/shadowrocket.png" alt="Shadowrocket">
     </div>
 </div>
 
@@ -207,11 +227,12 @@ body {
     <div class="step-number">1</div>
     <h2>Установка приложения</h2>
     <p>
-        Установите 
+        Установи (249,00 ₽)
         <a class="app-link" href="https://apps.apple.com/app/shadowrocket/id932747118" target="_blank">
             Shadowrocket из App Store
         </a>.
-        Если недоступно — используй зарубежный Apple ID.
+        Такое гибкое приложение полностью окупает свою стоимость.<br>
+        Если оплатить нет возможности, напиши мне в телеграм, можно оплатить через меня.
     </p>
 </div>
 
@@ -223,7 +244,13 @@ body {
     <p>
         Получи и скопируй ссылку конфигурации от бота.
         В приложении нажми +.
+         <div class="img-container">
+        <img src="images/step_1_1.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
         Либо отсканируй QR-код, нажав в приложении на кнопку в верхнем левом углу.<br>
+         <div class="img-container">
+        <img src="images/step_1_2.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
         ⚠️ При сканировании QR следующий пункт необязателен.
     </p>
 </div>
@@ -249,11 +276,17 @@ body {
     <h2>Настройка роутинга</h2>
     <p>
         1️⃣ Убедись, что на вкладке Home в приложении в параметре Global Routing выбрано "Config";<br>
+         <div class="img-container">
+        <img src="images/step_4_1.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
         2️⃣ Далее перейди во вкладку Config и нажми +;<br>
         3️⃣ Скопируй ссылку по кнопке "Скопировать конфигурацию" и нажми Download;<br>
         4️⃣ Убедись, что в Local Files появилась и выбрана скачанная конфигурация.
+        <div class="img-container">
+        <img src="images/step_4.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
     </p>
-    <button class="button" onclick="copyExample()">Скопировать конфигурацию</button>
+    <button class="button" onclick="copyRoutingConfig()">Скопировать конфигурацию</button>
 </div>
 
 <!-- STEP 5 -->
@@ -263,7 +296,10 @@ body {
     <h2>Подключение</h2>
     <p>
         Выбери конфигурацию из списка на вкладке Home и включи переключатель VPN.
-        Подтверди разрешение системы.
+        Подтверди разрешение системы.<br>
+        <div class="img-container">
+        <img src="images/step_5.jpg" alt="Добавление конфигурации" class="step-img">
+        </div>
     </p>
 </div>
 
@@ -275,7 +311,13 @@ body {
     <p>
         В приложении перейдите:<br>
         Settings → Config → Auto Background Update → Вкл. → Interval → 1<br>
-        Settings → Subscription → Update On Open → Вкл. → Auto Background Update → Вкл.
+        <div class="img-container">
+        <img src="images/step_6_1.jpg" alt="Автообновление конфигураций" class="step-img">
+        </div>
+        Settings → Subscription → Update On Open → Вкл. → Auto Background Update → Вкл.<br>
+        <div class="img-container">
+        <img src="images/step_6_2.jpg" alt="Автообновление конфигураций" class="step-img">
+        </div>
     </p>
 </div>
 
@@ -296,7 +338,7 @@ body {
     Не подключается — что делать?
     <div class="faq-answer">
         Проверь ссылку конфигурации и интернет-соединение.<br>
-        Либо напишите мне в телегу.
+        Либо напиши мне в телегу.
     </div>
 </div>
 
@@ -343,11 +385,6 @@ function toggleFaq(el){
 }
 
 /* ---------- COPY ---------- */
-
-function copyExample(){
-  navigator.clipboard.writeText("https://example-config-link");
-  alert("Ссылка скопирована");
-}
 
 function copyRoutingConfig(){
   navigator.clipboard.writeText("https://raw.githubusercontent.com/misha-tgshv/shadowrocket-configuration-file/refs/heads/main/conf/sr_ru_basic.conf");

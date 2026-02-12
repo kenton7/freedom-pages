@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Делаем YouTube без рекламы</title>
+<title>Настройка модуля YT-Premium-V1-RU</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -13,6 +13,25 @@ body{
  font-family:Inter,sans-serif;
  background:linear-gradient(135deg,#0f172a,#1e293b);
  color:white;
+}
+
+/* ---------- IMAGES ---------- */
+.img-container {
+    text-align: center; 
+    margin: 14px 0;     
+}
+
+.step-img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 14px;
+    margin-top: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: 0.4s;
+}
+
+.step-img:hover {
+    transform: scale(1.04);
 }
 
 /* nav */
@@ -92,7 +111,7 @@ body{
 <div class="header">
 <div class="hero">
 <h1>Настройка модуля YT-Premium-V1-RU</h1>
-<p>Подключение модуля YouTube для Shadowrocket</p>
+<p>Подключение модуля YouTube в Shadowrocket для просмотра YouTube без рекламы</p>
 <a href="index.html" class="button">← Назад</a>
 </div>
 </div>
@@ -101,7 +120,7 @@ body{
 
 <div class="step">
 <div class="step-number">1</div>
-<h2>Скопируйте ссылку модуля</h2>
+<h2>Скопируй ссылку модуля</h2>
 <div class="code-box" id="moduleLink">
 https://raw.githubusercontent.com/misha-tgshv/shadowrocket-configuration-file/refs/heads/release/modules/YT-Premium-V1-RU.module
 </div>
@@ -110,43 +129,117 @@ https://raw.githubusercontent.com/misha-tgshv/shadowrocket-configuration-file/re
 </div>
 
 <div class="step"><div class="step-number">2</div>
-<h2>Откройте Shadowrocket</h2>
-<p>Config → Modules</p>
+<h2>Открой Shadowrocket</h2>
+<p>Перейди в Config → Modules</p><br>
+ <div class="img-container">
+        <img src="images/yt-step-2.jpg" alt="Добавление модуля" class="step-img">
+        </div>
 </div>
 
 <div class="step"><div class="step-number">3</div>
-<h2>Добавьте модуль</h2>
-<p>Нажмите + → вставьте ссылку → Download</p>
+<h2>Добавление модуля</h2>
+<p>Нажми + → вставь ссылку → Download</p><br>
+<div class="img-container">
+        <img src="images/yt-step-3.jpg" alt="Добавление модуля" class="step-img">
+        </div>
 </div>
 
 <div class="step"><div class="step-number">4</div>
-<h2>Включите модуль</h2>
-<p>Активируйте переключатель</p>
+<h2>Включение модуля</h2>
+<p>Нажми на скачанный модуль и на кнопку Enable Module</p><br>
+<div class="img-container">
+        <img src="images/yt-step-4.jpg" alt="Добавление модуля" class="step-img">
+        </div>
 </div>
 
 <div class="step"><div class="step-number">5</div>
-<h2>HTTPS Decryption</h2>
-<p>Включите HTTPS Decryption и установите сертификат</p>
+<h2>Включение HTTPS Decryption, выпуск и установка сертификата</h2>
+    <p>
+        1️⃣ Перейди на вкладку Config и напротив нужной конфигурации нажмите ℹ️;<br>
+        <div class="img-container">
+        <img src="images/yt-step-5-1.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+        2️⃣ Перейди в раздел HTTPS Decryption;<br>
+        3️⃣ Включи переключатель HTTPS Decryption;<br>
+        <div class="img-container">
+        <img src="images/yt-step-5-2.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+        4️⃣ Нажми на кнопку Certificate;<br>
+        <div class="img-container">
+        <img src="images/yt-step-5-3.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+        5️⃣ Нажми Generate A New CA Certificate;<br>
+        6️⃣ Подтверди действие, снова выбрав Generate A New CA Certificate;<br>
+        <div class="img-container">
+        <img src="images/yt-step-5-4.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+        7️⃣ После генерации выбери Install CA Certificate to System;<br>
+        <div class="img-container">
+        <img src="images/yt-step-5-5.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+        8️⃣ В появившемся окне выбери Allow (Разрешить);<br>
+        <div class="img-container">
+        <img src="images/yt-step-5-6.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+        9️⃣ Появится сообщение Profile Downloaded (Профиль загружен).
+        <div class="img-container">
+        <img src="images/yt-step-5-7.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+    </p>
 </div>
 
 <div class="step"><div class="step-number">6</div>
-<h2>Установите профиль</h2>
-<p>Настройки → Profile Downloaded → Install</p>
+<h2>Установка профиля сертификата</h2>
+   <p>
+        1️⃣ Открой Настройки на iPhone;<br>
+        2️⃣ В самом верху появится пункт Profile Downloaded (Загружен профиль) — нажми на него;<br>
+        <div class="img-container">
+        <img src="images/yt-step-6-1.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+        3️⃣ Нажми Install (Установить), введи пароль от устройства;<br>
+        <div class="img-container">
+        <img src="images/yt-step-6-2.jpg" alt="Настройка модуля" class="step-img">
+        <img src="images/yt-step-6-3.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+        4️⃣ Снова нажми Install (ещё раз подтверди);<br>
+        <div class="img-container">
+        <img src="images/yt-step-6-4.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+        5️⃣ Сертификат будет установлен (Profile Installed).<br>
+        <div class="img-container">
+        <img src="images/yt-step-6-5.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+    </p>
 </div>
 
 <div class="step"><div class="step-number">7</div>
-<h2>Доверие сертификату</h2>
-<p>Certificate Trust Settings → включить</p>
+<h2>Сделай сертификат доверенным</h2>
+<p>
+        1️⃣ Открой Настройки → Основные → Об этом устройстве → в самом низу выбери Certificate Trust Settings (Доверие сертификатам);<br>
+        2️⃣ Включи переключатель напротив твоего сертификата Shadowrocket;<br>
+        <div class="img-container">
+        <img src="images/yt-step-7-1.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+        3️⃣ Подтверди действие, нажав Continue (Продолжить).<br>
+    </p>
 </div>
 
 <div class="step"><div class="step-number">8</div>
 <h2>Перезапуск YouTube</h2>
-<p>Закройте и откройте приложение</p>
+   <p>
+        Полностью закрой приложение YouTube
+        и открой снова для применения правил.
+    </p>
 </div>
 
 <div class="step"><div class="step-number">9</div>
-<h2>Автообновление</h2>
-<p>Settings → Auto Background Update → On</p>
+<h2>Автообновление модуля</h2>
+<p>
+        Перейди в приложении Shadowrocket в Settings → Modules → Auto Background Update → Вкл.<br>
+        <div class="img-container">
+        <img src="images/yt-step-8.jpg" alt="Настройка модуля" class="step-img">
+        </div>
+    </p>
 </div>
 
 </div>
